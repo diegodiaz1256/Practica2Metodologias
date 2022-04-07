@@ -1,10 +1,8 @@
 import re
 
 text = input()
-pattern = ""
+pattern = "\\b(?:C/|Calle) ([A-ZÑÁÉÍÓÚ][a-zñáéíóú]+),? *(?:Nº|N|n)? *(\\d+), *(\\d{5})\\b"
 results = re.findall(pattern, text)
 for match in results:
-    if "alumnos" in match:
-        print("alumno " + match[2] + " matriculado en " + match[3])
-    else:
-        print("profesor " + match[6] + " apellido " + match[7])
+    print(match[2] + "-" + match[0] + "-" + match[1])
+
